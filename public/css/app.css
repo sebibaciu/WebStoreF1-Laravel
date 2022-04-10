@@ -1,20 +1,41 @@
 .bg-secondary {
     background-color: #2c3e50 !important;
-  }
+}
 
-  .copyright {
+.copyright {
     background-color: #1a252f;
-  }
+}
 
-  .bg-primary {
+.bg-primary {
     background-color: #1abc9c !important;
-  }
+}
 
-  nav{
+nav {
     font-weight: 700;
-  }
+}
 
-  .img-card{
+.img-card {
     height: 18vw;
     object-fit: cover;
-  }
+}
+
+@font-face {
+    font-family: "Formula1";
+    src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.ttf);
+font-weight: normal;
+}
+
+@font-face {
+    font-family: "Formula1";
+    src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.ttf);
+font-weight: bold;
+}
+
+@font-face {
+    font-family: "Formula1";
+    src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Wide/Formula1-Wide.ttf);
+font-weight: italic;
+}
+.formula1 {
+    font-family: "Formula1";
+}

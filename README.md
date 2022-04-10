@@ -7,6 +7,8 @@ To Do
 
 - [x] Login
 - [x] Register
+- [x] Email
+- [x] Password Reset by Email
 - [ ] Views 
     - [ ] Products
         - [ ] Product Page
@@ -65,6 +67,7 @@ To Do
 - https://github.com/laravel/ui
 - https://laravel.com/docs/9.x/starter-kits
 - https://laravel.com/docs/9.x/artisan#tinker
+- https://laravel.com/docs/9.x/authorization
 
 
 

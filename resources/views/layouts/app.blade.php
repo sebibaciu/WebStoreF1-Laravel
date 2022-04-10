@@ -12,9 +12,9 @@
 
 <body>
     <!-- header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4 formula1" >
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home.index') }}">Online Store</a>
+            <a class="navbar-brand" href="{{ route('home.index') }}">F1</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,15 +35,14 @@
                             @csrf
                         </form>
                     @endguest
-
                 </div>
             </div>
         </div>
     </nav>
 
-    <header class="masthead bg-primary text-white text-center py-4">
+    <header class="masthead bg-primary text-white text-center py-4 formula1">
         <div class="container d-flex align-items-center flex-column">
-            <h2>@yield('subtitle', 'A Laravel Online Store')</h2>
+            <h2>@yield('subtitle', 'Homepage')</h2>
         </div>
     </header>
     <!-- header -->
