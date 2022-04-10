@@ -17,6 +17,16 @@ class Product extends Model
      * $this->attributes['updated_at'] - timestamp - contains the product update date
      */
 
+     //am mutat din controller validarea
+    public static function validate($request)
+    {
+    $request->validate([
+    "name" => "required|max:255",
+    "description" => "required",
+    "price" => "required|numeric|gt:0",
+    'image' => 'image',
+    ]);
+    }
 
      //pentru fiecare atribvut product folosim un get sau set pentru a accesa sau modifica
      //atributele din model
