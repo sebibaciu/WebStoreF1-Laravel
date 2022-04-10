@@ -1,5 +1,5 @@
 
-##Licenta - Aplicatie Web E-Commerce
+## Licenta - Aplicatie Web E-Commerce
 
 Acest Reposistory contine documentatie si cod sursa pentru licenta
 
