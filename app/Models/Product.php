@@ -28,6 +28,18 @@ class Product extends Model
     ]);
     }
 
+    //o metoda statica ce primeste peorusele Eloqent adaugate in cos si produsele acesteia
+    //itereaza produsele si calucleaza totalul pentru a putea fi platit
+    public static function sumPricesByQuantities($products, $productsInSession)
+    {
+        $total = 0;
+        foreach ($products as $product) {
+            $total = $total + ($product->getPrice()*$productsInSession[$product->getId()]);
+        }
+
+        return $total;
+    }
+
      //pentru fiecare atribvut product folosim un get sau set pentru a accesa sau modifica
      //atributele din model
     public function getId()

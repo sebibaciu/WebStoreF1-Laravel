@@ -27,6 +27,7 @@ To Do
         - [ ] Delete
 - [ ] Shopping Cart
 - [ ] Order Items
+- [ ] Invoice
 - [ ] Payment
 - [ ] Orders Page
 
