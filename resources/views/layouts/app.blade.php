@@ -41,7 +41,7 @@
         </div>
     </nav>
 
-    <header class="masthead bg-primary text-white text-center py-4 formula1">
+    <header class="masthead text-white text-center py-4 formula1"  style="background-color:@yield('color', '#D5C7BC');">
         <div class="container d-flex align-items-center flex-column">
             <h2>@yield('subtitle', 'Homepage')</h2>
         </div>
@@ -53,13 +53,14 @@
     </div>
 
     <!-- footer -->
-    <div class="copyright py-4 text-center text-white">
-        <div class="container">
-            <small>
-                Copyright<b>
-            </small>
+    <footer class="flex-column">
+        <!-- Copyright -->
+        <div class="text-center p-3 mt-auto" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-dark">Copyright</a>
         </div>
-    </div>
+        <!-- Copyright -->
+      </footer>
     <!-- footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>

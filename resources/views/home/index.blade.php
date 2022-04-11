@@ -6,10 +6,14 @@
             <img src="{{ asset('/img/red-bull.png') }}" class="img-fluid rounded">
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
-            <img src="{{ asset('/img/ferrari.png') }}" class="img-fluid rounded">
+            <a href="{{ route('teams.ferrari') }}">
+                <img src="{{ asset('/img/ferrari.png') }}" class="img-fluid rounded">
+            </a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
+            <a href="{{ route('teams.mercedes') }}">
             <img src="{{ asset('/img/mercedes.png') }}" class="img-fluid rounded">
+            </a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             <img src="{{ asset('/img/mclaren.png') }}" class="img-fluid rounded">
@@ -28,6 +32,9 @@
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             <img src="{{ asset('/img/aston-martin.png') }}" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6 col-lg-4 mb-2 mx-auto d-block">
+            <img src="{{ asset('/img/haasl.png') }}" class="img-fluid rounded">
         </div>
     </div>
 @endsection

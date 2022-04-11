@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/about', 'App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");
@@ -21,7 +22,8 @@ Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->nam
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
 Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("cart.delete");
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
-
+Route::get('/teams/ferrari', 'App\Http\Controllers\TeamsController@ferrari')->name("teams.ferrari");
+Route::get('/teams/mercedes', 'App\Http\Controllers\TeamsController@mercedes')->name("teams.mercedes");
 Route::middleware('admin')->group(function () {
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
 Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");

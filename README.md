@@ -10,22 +10,18 @@ To Do
 - [x] Email
 - [x] Password Reset by Email
 - [ ] Views 
+    - [ ] Teams
     - [ ] Products
         - [ ] Product Page
     - [ ] About
-    - [ ] Home
+    - [X] Home
 - [x] Admin Panel 
     - [x] Product 
         - [x] View
         - [x] Edit
         - [x] Create
         - [x] Delete
-    - [ ] User
-        - [ ] View
-        - [ ] Edit
-        - [ ] Create
-        - [ ] Delete
-- [ ] Shopping Cart
+- [x] Shopping Cart
 - [ ] Order Items
 - [ ] Invoice
 - [ ] Payment
