@@ -11,9 +11,9 @@ To Do
 - [x] Password Reset by Email
 - [ ] Views 
     - [ ] Teams
-    - [ ] Products
-        - [ ] Product Page
-    - [ ] About
+    - [x] Products
+        - [x] Product Page
+    - [x] About
     - [X] Home
 - [x] Admin Panel 
     - [x] Product 
@@ -22,10 +22,10 @@ To Do
         - [x] Create
         - [x] Delete
 - [x] Shopping Cart
-- [ ] Order Items
-- [ ] Invoice
+- [x] Order Items
+- [x] Invoice
 - [ ] Payment
-- [ ] Orders Page
+- [x] Orders Page
 
 
 

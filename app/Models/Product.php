@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use App\Models\Item;
 
 class Product extends Model
 {
@@ -19,19 +19,16 @@ class Product extends Model
      * $this->items - Item[] - contains the associated items
      */
 
-     //am mutat din controller validarea
     public static function validate($request)
     {
-    $request->validate([
-    "name" => "required|max:255",
-    "description" => "required",
-    "price" => "required|numeric|gt:0",
-    'image' => 'image',
-    ]);
+        $request->validate([
+            "name" => "required|max:255",
+            "description" => "required",
+            "price" => "required|numeric|gt:0",
+            'image' => 'image',
+        ]);
     }
 
-    //o metoda statica ce primeste peorusele Eloqent adaugate in cos si produsele acesteia
-    //itereaza produsele si calucleaza totalul pentru a putea fi platit
     public static function sumPricesByQuantities($products, $productsInSession)
     {
         $total = 0;
@@ -42,8 +39,6 @@ class Product extends Model
         return $total;
     }
 
-     //pentru fiecare atribvut product folosim un get sau set pentru a accesa sau modifica
-     //atributele din model
     public function getId()
     {
         return $this->attributes['id'];

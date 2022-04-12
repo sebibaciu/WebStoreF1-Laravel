@@ -12,36 +12,42 @@
 
 <body>
     <!-- header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4 formula1" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4 formula1">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home.index') }}">F1</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="{{ route('home.index') }}">Home</a>
-                    <a class="nav-link active" href="{{ route('product.index') }}">Products</a>
-                    <a class="nav-link active" href="{{ route('cart.index') }}">Cart</a>
-                    <a class="nav-link active" href="{{ route('home.about') }}">About</a>
-                    <div class="vr bg-white mx-2 d-none d-lg-block"></div>
-                    @guest
-                        <a class="nav-link active" href="{{ route('login') }}">Login</a>
-                        <a class="nav-link active" href="{{ route('register') }}">Register</a>
-                    @else
-                        <form id="logout" action="{{ route('logout') }}" method="POST">
-                            <a role="button" class="nav-link active"
-                                onclick="document.getElementById('logout').submit();">Logout</a>
-                            @csrf
-                        </form>
-                    @endguest
+            <a class="navbar-logo" href="/">
+                <img src="{{ asset('/img/f1-logo.png') }}" alt="logo" style="height: auto;
+                width: 90px;
+                margin-right: 15px;" />
+                <a class="navbar-brand" href="{{ route('home.index') }}">Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" href="{{ route('home.index') }}">Home</a>
+                        <a class="nav-link active" href="{{ route('product.index') }}">Products</a>
+                        <a class="nav-link active" href="{{ route('cart.index') }}">Cart</a>
+                        <a class="nav-link active" href="{{ route('home.about') }}">About</a>
+                        <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+                        @guest
+                            <a class="nav-link active" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                        @else
+                            <a class="nav-link active" href="{{ route('myaccount.orders') }}">My Orders</a>
+                            <form id="logout" action="{{ route('logout') }}" method="POST">
+                                <a role="button" class="nav-link active"
+                                    onclick="document.getElementById('logout').submit();">Logout</a>
+                                @csrf
+                            </form>
+                        @endguest
+                    </div>
                 </div>
-            </div>
         </div>
     </nav>
 
-    <header class="masthead text-white text-center py-4 formula1"  style="background-color:@yield('color', '#D5C7BC');">
+    <header class="masthead text-white text-center py-4 formula1" style="background-color:@yield('color', '#D5C7BC');">
         <div class="container d-flex align-items-center flex-column">
             <h2>@yield('subtitle', 'Homepage')</h2>
         </div>
@@ -52,16 +58,10 @@
         @yield('content')
     </div>
 
-    <!-- footer -->
-    <footer class="flex-column">
-        <!-- Copyright -->
-        <div class="text-center p-3 mt-auto" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2020 Copyright:
-          <a class="text-dark">Copyright</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-    <!-- footer -->
+
+    {{-- comment     <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+      <div class="container p-4"><marquee behavior="slide" direction="left">HTML slide-in text...</marquee></div>
+    </footer> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
 </body>

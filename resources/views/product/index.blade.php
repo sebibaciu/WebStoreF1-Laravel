@@ -2,7 +2,7 @@
 @section('title', $viewData["title"])
 @section('subtitle', $viewData["subtitle"])
 @section('content')
-<div class="row">
+<div class="row margin-bottom-xl">
   @foreach ($viewData["products"] as $product)
   <div class="col-md-4 col-lg-3 mb-2">
     <div class="card">

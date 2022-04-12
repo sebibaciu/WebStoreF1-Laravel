@@ -107,4 +107,3 @@ class Order extends Model
         $this->items = $items;
     }
 }
-

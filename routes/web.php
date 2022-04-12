@@ -22,19 +22,27 @@ Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->nam
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
 Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("cart.delete");
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')->name("cart.purchase");
+    Route::get('/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')->name("myaccount.orders");
+});
+
+
 Route::get('/teams/ferrari', 'App\Http\Controllers\TeamsController@ferrari')->name("teams.ferrari");
 Route::get('/teams/mercedes', 'App\Http\Controllers\TeamsController@mercedes')->name("teams.mercedes");
+Route::get('/teams/redbull', 'App\Http\Controllers\TeamsController@redbull')->name("teams.redbull");
+Route::get('/teams/mclaren', 'App\Http\Controllers\TeamsController@mclaren')->name("teams.mclaren");
+
 Route::middleware('admin')->group(function () {
-Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
-Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
-Route::post('/admin/products/store', 'App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
-Route::delete('admin/products/{id}/delete','App\Http\Controllers\Admin\AdminProductController@delete')->name("admin.product.delete");
-//arata un form unde introducem datele noi ale produsului
-Route::get('/admin/products/{id}/edit', 'App\Http\Controllers\Admin\AdminProductController@edit')->name("admin.product.edit");
-//un Put HTTP ce actualizeaza datele
-Route::put('/admin/products/{id}/update', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
+    Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
+    Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
+    Route::post('/admin/products/store', 'App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
+    Route::delete('admin/products/{id}/delete', 'App\Http\Controllers\Admin\AdminProductController@delete')->name("admin.product.delete");
+    //arata un form unde introducem datele noi ale produsului
+    Route::get('/admin/products/{id}/edit', 'App\Http\Controllers\Admin\AdminProductController@edit')->name("admin.product.edit");
+    //un Put HTTP ce actualizeaza datele
+    Route::put('/admin/products/{id}/update', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
 });
 
 Auth::routes();
-
-

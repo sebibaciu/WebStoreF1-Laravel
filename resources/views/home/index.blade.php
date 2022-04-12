@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('title', $viewData['title'])
+@section('subtitle', $viewData['subtitle'])
 @section('content')
     <div class="row">
         <div class="col-md-6 col-lg-4 mb-2">
+            <a href="{{ route('teams.redbull') }}">
             <img src="{{ asset('/img/red-bull.png') }}" class="img-fluid rounded">
+            </a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             <a href="{{ route('teams.ferrari') }}">
@@ -16,7 +19,9 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
+            <a href="{{ route('teams.mclaren') }}">
             <img src="{{ asset('/img/mclaren.png') }}" class="img-fluid rounded">
+            </a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             <img src="{{ asset('/img/alfa-romeo.png') }}" class="img-fluid rounded">
