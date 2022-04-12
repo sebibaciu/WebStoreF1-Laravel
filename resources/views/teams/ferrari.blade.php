@@ -2,6 +2,13 @@
 @section('title', $viewData['title'])
 @section('subtitle', $viewData['subtitle'])
 @section('color', $viewData['color'])
+@section('teamdesc', $viewData['teamdesc'])
+@section('carimage', $viewData['carimage'])
+@section('driver1name', $viewData['driver1name'])
+@section('driver1img', $viewData['driver1img'])
+@section('driver1desc', $viewData['driver1desc'])
+@section('driver2name', $viewData['driver2name'])
+@section('driver2img', $viewData['driver2img'])
 @section('content')
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -16,16 +23,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <img alt="Bootstrap Image Preview" src="https://www.formula1.com/content/dam/fom-website/teams/2022/ferrari.png.transform/6col/image.png" class="mx-auto d-block" />
+                <img alt="Bootstrap Image Preview" src="@yield('carimage', 'imaginea masinii')" class="mx-auto d-block" />
                 <div class="jumbotron">
                     <p>
-                        <span>For many, Ferrari and Formula 1 racing have become inseparable. The only team to have competed
-                            in every season since the world championship began, the Prancing Horse has grown from the humble
-                            dream of founder Enzo Ferrari to become one of the most iconic and recognised brands in the
-                            world. Success came quickly through the likes of Alberto Ascari and John Surtees, and continued
-                            – in amongst leaner times – with Niki Lauda in the 1970s and then Michael Schumacher in the
-                            2000s, when Ferrari claimed a then unprecedented five consecutive title doubles, securing their
-                            status as the most successful and decorated team in F1 history...</span>
+                        <span>@yield('teamdesc', 'descriere echipa')</span>
                     </p>
                 </div>
             </div>
@@ -34,36 +35,13 @@
             <div class="col-md-6 h-25 overflow-hidden">
 
                 <h2 class="formula1 text-center">
-                    Charles Leclerc 🇲🇨
+                    @yield('driver1name', 'sofer principal')
                 </h2>
-                <img class="img-fluid" alt="Bootstrap Image Preview" src="https://www.formula1.com/content/fom-website/en/drivers/charles-leclerc/_jcr_content/image.img.1920.medium.jpg/1646818893219.jpg" />
+                <img class="img-fluid" alt="Bootstrap Image Preview" src="@yield('driver1img', 'sofer principal poza')" />
                 <br>
                 <div class="overflow-auto d-inline-block" style="height:20em">
                     <p><br>
-                        Born in the Mediterranean idyll of Monaco, Leclerc arrived in F1 on a tidal wave of expectation.<br>
-
-                        Practically peerless on his way to the GP3 and Formula 2 crowns, he showcased a dazzling array of
-                        skills from scorching pole positions, commanding victories – even when his car caught fire twice at
-                        Silverstone – to an ability to muscle his way through the pack. Winning back-to-back championships
-                        also taught Leclerc how to handle pressure, another useful tool in the big pond of Formula 1
-                        racing.<br>
-
-                        Stepping up to F1 in 2018, Leclerc showed flashes of ballistic pace on Saturdays and racing
-                        brilliance on Sundays, dragging his Sauber beyond its limits – and earning himself a money-can’t-buy
-                        race seat at Ferrari for 2019, stepping into the shoes of the Scuderia’s last world champion, Kimi
-                        Raikkonen.<br>
-
-                        There he immediately put the cat among the proverbial pigeons, unafraid to go wheel-to-wheel with
-                        established number one, Sebastian Vettel. A maiden F1 victory at Spa was followed by another a week
-                        later on Ferrari’s hallowed home turf of Monza. The tifosi had found another new hero – who then
-                        became the first man to out-score Vettel over a season with the Scuderia, a feat he repeated in
-                        crushing fashion the following year.<br>
-
-                        Out of the car, Leclerc is modest and thoughtful - but then he is on his own very personal mission.
-                        This exciting young talent is racing for his late father Herve and his friend and mentor Jules
-                        Bianchi, the F1 driver who died in 2015.<br>
-
-                        On the evidence so far, he is doing them both proud.
+                        @yield('driver1desc', 'descriere sofer principal')
                     </p>
                 </div>
             </div>

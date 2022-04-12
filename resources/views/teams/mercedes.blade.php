@@ -89,7 +89,10 @@
                         A refusal to cede ground to his rivals - and commitment to a tricky pass – underpins Russell’s
                         winning mentality. And it’s what got him the call-up to replace Lewis Hamilton for a one-off
                         Mercedes appearance for Sakhir 2020 when the reigning champ was struck down by Covid-19.<br>
-                        He kept his head down at Williams in 2021, scoring his first points and podium, all the while keeping his eye on the bigger prize. Having proved himself a hard worker and a tenacious talent, that prize arrived in the form of a chance to take on compatriot and seven-time champion Hamilton in identical machinery.<br>
+                        He kept his head down at Williams in 2021, scoring his first points and podium, all the while
+                        keeping his eye on the bigger prize. Having proved himself a hard worker and a tenacious talent,
+                        that prize arrived in the form of a chance to take on compatriot and seven-time champion Hamilton in
+                        identical machinery.<br>
                     </p>
                 </div>
             </div>
@@ -99,16 +102,23 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image1.img.1920.medium.jpg/1647085167162.jpg" alt="First slide">
+                            <img class="d-block w-100"
+                                src="https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image1.img.1920.medium.jpg/1647085167162.jpg"
+                                alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://www.formula1.com/en/teams/Mercedes.html#" alt="Second slide">
+                            <img class="d-block w-100" src="https://www.formula1.com/en/teams/Mercedes.html#"
+                                alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image3.img.1920.medium.jpg/1647090476768.jpg" alt="Third slide">
+                            <img class="d-block w-100"
+                                src="https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image3.img.1920.medium.jpg/1647090476768.jpg"
+                                alt="Third slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image4.img.1920.medium.jpg/1647091740679.jpg" alt="Forth slide">
+                            <img class="d-block w-100"
+                                src="https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image4.img.1920.medium.jpg/1647091740679.jpg"
+                                alt="Forth slide">
                         </div>
                     </div>
                 </div>
