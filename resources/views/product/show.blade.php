@@ -1,15 +1,14 @@
 @extends('layouts.app')
 @section('title', $viewData['title'])
-@section('subtitle', $viewData['subtitle'])
+{{-- @section('subtitle', $viewData['subtitle'])comment --}}
 @section('content')
     <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-4">
-                <br>
-                <br>
-                <img src="{{ asset('/storage/' . $viewData['product']->getImage()) }}" class="mx-auto d-block">
+            <div class="col-sm-4 d-flex">
+                <img src="{{ asset('/storage/' . $viewData['product']->getImage()) }}" class="img-fluid"
+                    style="align-self: center;">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 d-flex">
                 <div class="card-body">
                     <h4 class="card-title formula1">
                         {{ $viewData['product']->getName() }}
@@ -27,7 +26,7 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    <h5>Your Price: {{ $viewData['product']->getPrice() }} €</h5>
+                                    <h5>{{ $viewData['product']->getPrice() }} €</h5>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +69,7 @@
                     </div>
                     <br>
                     <form method="POST" action="{{ route('cart.add', ['id' => $viewData['product']->getId()]) }}">
-                        <div class="row">
+                        <div class="row text-end">
                             @csrf
                             <div class="col-auto">
                                 <div class="input-group col-auto">

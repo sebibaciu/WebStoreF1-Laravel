@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,17 @@ Route::get('/teams/ferrari', 'App\Http\Controllers\TeamsController@ferrari')->na
 Route::get('/teams/mercedes', 'App\Http\Controllers\TeamsController@mercedes')->name("teams.mercedes");
 Route::get('/teams/redbull', 'App\Http\Controllers\TeamsController@redbull')->name("teams.redbull");
 Route::get('/teams/mclaren', 'App\Http\Controllers\TeamsController@mclaren')->name("teams.mclaren");
+Route::get('/teams/alpine', 'App\Http\Controllers\TeamsController@alpine')->name("teams.alpine");
+Route::get('/teams/haas', 'App\Http\Controllers\TeamsController@haas')->name("teams.haas");
+Route::get('/teams/williams', 'App\Http\Controllers\TeamsController@williams')->name("teams.williams");
+Route::get('/teams/astonmartin', 'App\Http\Controllers\TeamsController@astonmartin')->name("teams.astonmartin");
+Route::get('/teams/alphatauri', 'App\Http\Controllers\TeamsController@alphatauri')->name("teams.alphatauri");
+Route::get('/teams/alfaromeo', 'App\Http\Controllers\TeamsController@alfaromeo')->name("teams.alfaromeo");
+
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+
+
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
-{
+{//colecnteaza datele produselor si afiseaza viewul admin.product.index
     public function index()
     {
         $viewData = [];
@@ -16,7 +16,8 @@ class AdminProductController extends Controller
         $viewData["products"] = Product::all();
         return view('admin.product.index')->with("viewData", $viewData);
     }
-
+// primeste un request, se valideaza, se creaza instanta NewProduct la care este atribuita valorile din request
+// si se salveaza in baza de date
     public function store(Request $request)
     {
         Product::validate($request);

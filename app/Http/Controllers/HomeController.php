@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -23,4 +24,6 @@ class HomeController extends Controller
         $viewData["author"] = "Developed by: Your Name";
         return view('home.about')->with("viewData", $viewData);
     }
+
+
 }

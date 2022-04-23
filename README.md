@@ -9,6 +9,7 @@ To Do
 - [x] Register
 - [x] Email
 - [x] Password Reset by Email
+    -[x] SMTP
 - [ ] Views 
     - [ ] Teams
     - [x] Products

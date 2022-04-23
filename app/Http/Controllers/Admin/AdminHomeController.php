@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminHomeController extends Controller
 {
+    //afiseaza admin.home.index
     public function index()
     {
         $viewData = [];
