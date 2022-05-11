@@ -89,6 +89,15 @@ class Product extends Model
         $this->attributes['price'] = $price;
     }
 
+    public function getTeam()
+    {
+        return $this->attributes['team'];
+    }
+
+    public function setTeam($team)
+    {
+        $this->attributes['team'] = $team;
+    }
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];

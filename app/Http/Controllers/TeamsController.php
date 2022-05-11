@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Http\Controllers\DB;
 class TeamsController extends Controller
 {
     public function ferrari()
@@ -35,7 +37,8 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Ferrari/_jcr_content/gallery/image2.img.1920.medium.jpg/1647085483435.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Ferrari/_jcr_content/gallery/image3.img.1920.medium.jpg/1647000607750.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Ferrari/_jcr_content/gallery/image4.img.1920.medium.jpg/1647007136048.jpg";
-        return view('teams.ferrari')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'ferrari')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
 
     public function mercedes()
@@ -74,7 +77,8 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image2.img.1920.medium.jpg/1647087350662.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image3.img.1920.medium.jpg/1647090476768.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/gallery/image4.img.1920.medium.jpg/1647091740679.jpg";
-        return view('teams.mercedes')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'mercedes')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
 
     public function redbull()
@@ -105,7 +109,8 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/gallery/image3.img.1920.medium.jpg/1647010572973.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/gallery/image6.img.1920.medium.jpg/1647090477521.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/gallery/image2.img.1920.medium.jpg/1647089854985.jpg";
-        return view('teams.redbull')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'redbull')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
 
     public function mclaren()
@@ -144,7 +149,8 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/McLaren/_jcr_content/gallery/image4.img.1920.medium.jpg/1646932823104.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/McLaren/_jcr_content/gallery/image5.img.1920.medium.jpg/1645619394223.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/McLaren/_jcr_content/gallery/image6.img.1920.medium.jpg/1645693882401.jpg";
-        return view('teams.mclaren')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'mclaren')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
 
     public function alpine()
@@ -181,7 +187,8 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Alpine/_jcr_content/gallery/image4.img.1920.medium.jpg/1647087657759.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Alpine/_jcr_content/gallery/image6.img.1920.medium.jpg/1647007443791.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Alpine/_jcr_content/gallery/image1.img.1920.medium.jpg/1646998131852.jpg";
-        return view('teams.alpine')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'alpine')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
     public function alfaromeo()
     {
@@ -225,7 +232,8 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Alfa-Romeo-Racing/_jcr_content/gallery/image2.img.1920.medium.jpg/1647001847538.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Alfa-Romeo-Racing/_jcr_content/gallery/image3.img.1920.medium.jpg/1647082040701.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Alfa-Romeo-Racing/_jcr_content/gallery/image5.img.1920.medium.jpg/1646988164009.jpg";
-        return view('teams.alfaromeo')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'alfaromeo')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
     public function alphatauri()
     {
@@ -261,7 +269,8 @@ He may not have adapted to Grand Prix racing quite as quickly as he did to F2, b
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/AlphaTauri/_jcr_content/gallery/image11.img.1536.medium.jpg/1647085482910.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/AlphaTauri/_jcr_content/gallery/image2.img.1536.medium.jpg/1647074597497.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/AlphaTauri/_jcr_content/gallery/image3.img.1536.medium.jpg/1647068441463.jpg";
-        return view('teams.alphatauri')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'alphatauri')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
     public function williams()
     {
@@ -297,7 +306,8 @@ He may not have adapted to Grand Prix racing quite as quickly as he did to F2, b
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Williams/_jcr_content/gallery/image3.img.1536.medium.jpg/1647000606673.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Williams/_jcr_content/gallery/image4.img.1536.medium.jpg/1646933465093.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Williams/_jcr_content/gallery/image61.img.1536.medium.jpg/1646918456346.jpg";
-        return view('teams.redbull')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'williams')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
 
     public function astonmartin()
@@ -332,7 +342,8 @@ He may not have adapted to Grand Prix racing quite as quickly as he did to F2, b
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Aston-Martin/_jcr_content/gallery/image2.img.1536.medium.jpg/1647107385951.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Aston-Martin/_jcr_content/gallery/image3.img.1536.medium.jpg/1645704506318.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Aston-Martin/_jcr_content/gallery/image4.img.1536.medium.jpg/1645631773839.jpg";
-        return view('teams.redbull')->with("viewData", $viewData);
+        $viewData["products"] = Product::where('team', 'astonmartin')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
 
     public function haas()
@@ -364,11 +375,12 @@ The Roskilde racer’s own prowess was proven on debut for McLaren, who guided h
 Other champagne moments have been more difficult to find, as he left McLaren behind for a season with Renault, before settling in for four among kindred spirits at Haas. And now he’s back with the US team – after a year away in the States, racing Indy and sportscars among other things.
 
 His meaty manoeuvres and elbows-out approach have earned him a bad-boy reputation on track, something that still leaves him baffled. Out of the car Magnussen is laidback and affable. After all he has his dream job – and he is only here to race.";
-        $viewData["carousel1"] = "";
-        $viewData["carousel2"] = "";
-        $viewData["carousel3"] = "";
-        $viewData["carousel4"] = "";
-        return view('teams.haas')->with("viewData", $viewData);
+        $viewData["carousel1"] = "https://www.formula1.com/content/fom-website/en/teams/Haas-F1-Team/_jcr_content/gallery/image1.img.1920.medium.jpg/1647007443268.jpg";
+        $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Haas-F1-Team/_jcr_content/gallery/image2.img.1920.medium.jpg/1646995950201.jpg";
+        $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Haas-F1-Team/_jcr_content/gallery/image3.img.1920.medium.jpg/1646988166812.jpg";
+        $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Haas-F1-Team/_jcr_content/gallery/image4.img.1920.medium.jpg/1646995620653.jpg";
+        $viewData["products"] = Product::where('team', 'haas')->get();
+        return view('teams.teams')->with("viewData", $viewData);
     }
     /*   public function template()
 {

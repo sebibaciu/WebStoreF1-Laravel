@@ -7,11 +7,12 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous" />
+    <link rel="icon" href="{{ asset('/img/icon.png') }}" />
     <title>@yield('title', 'Online Store')</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body class ="d-flex flex-column min-vh-100" style="background-color: #F6F3F5;">
+<body class="d-flex flex-column min-vh-100" style="background-color: #F6F3F5;">
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark py-4 formula1" style="background-color: #272932">
         <div class="container">
@@ -36,7 +37,8 @@
                             <a class="nav-link active" href="{{ route('login') }}">Login</a>
                             <a class="nav-link active" href="{{ route('register') }}">Register</a>
                         @else
-                            <a class="nav-link active" href="{{ route('myaccount.orders') }}">My Orders</a>
+                            <a class="nav-link active" href="{{ route('stripe') }}">Add F1Credits</a>
+                            <a class="nav-link active" href="{{ route('myaccount.orders') }}">My Orders | Balance</a>
                             <form id="logout" action="{{ route('logout') }}" method="POST">
                                 <a role="button" class="nav-link active"
                                     onclick="document.getElementById('logout').submit();">Logout</a>
@@ -63,16 +65,18 @@
     <!-- Footer -->
     <footer class=" mt-auto text-center text-white" style="background-color:#272932;">
 
-      <div class="container p-4">
-        <section class="mb-4">
-          <p>
-            This site is for educational purposes only! Copyright Disclaimer under section 107 of the Copyright Act 1976, allowance is made for “fair use” for purposes such as criticism, comment, news reporting, teaching, scholarship, education and research.
-          </p>
-        </section>
-      </div>
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="container p-4">
+            <section class="mb-4">
+                <p>
+                    This site is for educational purposes only! Copyright Disclaimer under section 107 of the Copyright
+                    Act 1976, allowance is made for “fair use” for purposes such as criticism, comment, news reporting,
+                    teaching, scholarship, education and research.
+                </p>
+            </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
 
-      </div>
+        </div>
     </footer>
 </body>
 

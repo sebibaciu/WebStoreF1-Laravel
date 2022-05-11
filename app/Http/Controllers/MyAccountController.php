@@ -14,6 +14,10 @@ class MyAccountController extends Controller
         $viewData["title"] = "My Orders - Online Store";
         $viewData["subtitle"] =  "My Orders";
         $viewData["orders"] = Order::with(['items.product'])->where('user_id', Auth::user()->getId())->get();
+        $viewData["balance"] = Auth::user()->getBalance();
         return view('myaccount.orders')->with("viewData", $viewData);
+
     }
+
+
 }

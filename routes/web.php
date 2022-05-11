@@ -41,7 +41,8 @@ Route::get('/teams/astonmartin', 'App\Http\Controllers\TeamsController@astonmart
 Route::get('/teams/alphatauri', 'App\Http\Controllers\TeamsController@alphatauri')->name("teams.alphatauri");
 Route::get('/teams/alfaromeo', 'App\Http\Controllers\TeamsController@alfaromeo')->name("teams.alfaromeo");
 
-Route::get('stripe', [StripeController::class, 'stripe']);
+
+Route::get('stripe', [StripeController::class, 'stripe'])->name('stripe');
 Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
 
 

@@ -43,7 +43,23 @@
                             </div>
                         </div>
                         <div class="col">
-                            &nbsp;
+                            <div class="mb-3 row">
+                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Team:</label>
+                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                    <select name="team" value="{{ old('team') }}" type="text" class="form-control">
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="redbull">Red-Bull</option>
+                                        <option value="alphatauri">Alpha Tauri</option>
+                                        <option value="ferrari">Ferrari</option>
+                                        <option value="haas">Haas</option>
+                                        <option value="alpine">Alpine</option>
+                                        <option value="mclaren">Mclaren</option>
+                                        <option value="alfaromeo">Alfa Romeo</option>
+                                        <option value="williams">Williams</option>
+                                        <option value="astonmartin">Aston Martin</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,7 +91,8 @@
                         <tr>
                             <td>{{ $product->getId() }}</td>
                             <td>{{ $product->getName() }}</td>
-                            <td><a class="btn btn-primary" href="{{route('admin.product.edit', ['id'=> $product->getId()])}}">
+                            <td><a class="btn btn-primary"
+                                    href="{{ route('admin.product.edit', ['id' => $product->getId()]) }}">
                                     <i class="bi-pencil"></i>
                             </td>
                             <td>

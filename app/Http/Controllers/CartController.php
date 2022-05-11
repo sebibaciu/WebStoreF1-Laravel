@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\User;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,10 +69,13 @@ class CartController extends Controller
             }
             $order->setTotal($total);
             $order->save();
-
+            $balance = Auth::user()->getBalance();
+            if ($total > $balance) {
+                return redirect()->route('stripe')->with('error', 'You don\'t have enough money to buy this products');
+            } else {
             $newBalance = Auth::user()->getBalance() - $total;
             Auth::user()->setBalance($newBalance);
-            Auth::user()->save();
+            Auth::user()->save();}
 
             $request->session()->forget('products');
 
@@ -84,4 +88,6 @@ class CartController extends Controller
             return redirect()->route('cart.index');
         }
     }
+
 }
+
