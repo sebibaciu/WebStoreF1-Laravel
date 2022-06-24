@@ -109,7 +109,7 @@ class TeamsController extends Controller
         $viewData["carousel2"] = "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/gallery/image3.img.1920.medium.jpg/1647010572973.jpg";
         $viewData["carousel3"] = "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/gallery/image6.img.1920.medium.jpg/1647090477521.jpg";
         $viewData["carousel4"] = "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/gallery/image2.img.1920.medium.jpg/1647089854985.jpg";
-        $viewData["products"] = Product::where('team', 'redbull')->get();
+        $viewData["products"] = Product::where('team', 'redbull')->paginate(4);
         return view('teams.teams')->with("viewData", $viewData);
     }
 

@@ -26,7 +26,7 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    <h5>{{ $viewData['product']->getPrice() }} €</h5>
+                                    <h5>{{ $viewData['product']->getPrice() }}.00 €</h5>
                                 </div>
                             </div>
                         </div>
@@ -67,17 +67,8 @@
                             </div>
                         </div>
                     </div>
-                    <br>
                     <form method="POST" action="{{ route('cart.add', ['id' => $viewData['product']->getId()]) }}">
-                        <div class="row text-end">
-                            @csrf
-                            <div class="col-auto">
-                                <div class="input-group col-auto">
-                                    <div class="input-group-text">Quantity</div>
-                                    <input type="number" min="1" max="10" class="form-control quantity-input"
-                                        name="quantity" value="1">
-                                </div>
-                            </div>
+                    </br>
                             <div class="col-auto">
                                 <button class="btn bg-primary text-white" type="submit">Add to cart</button>
                             </div>

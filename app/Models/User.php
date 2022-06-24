@@ -38,6 +38,8 @@ class User extends Authenticatable
         'email',
         'password',
         'balance',
+        'role',
+        'size',
     ];
 
     /**
@@ -117,6 +119,15 @@ class User extends Authenticatable
     public function setBalance($balance)
     {
         $this->attributes['balance'] = $balance;
+    }
+    public function getSize()
+    {
+        return $this->attributes['size'];
+    }
+
+    public function setSize($size)
+    {
+        $this->attributes['size'] = $size;
     }
 
     public function getCreatedAt()

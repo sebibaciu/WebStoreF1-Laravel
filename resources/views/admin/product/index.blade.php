@@ -46,7 +46,7 @@
                             <div class="mb-3 row">
                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Team:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <select name="team" value="{{ old('team') }}" type="text" class="form-control">
+                                    <select name="team" type="text" class="form-control">
                                         <option value="mercedes">Mercedes</option>
                                         <option value="redbull">Red-Bull</option>
                                         <option value="alphatauri">Alpha Tauri</option>

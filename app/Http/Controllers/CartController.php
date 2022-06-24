@@ -71,7 +71,7 @@ class CartController extends Controller
             $order->save();
             $balance = Auth::user()->getBalance();
             if ($total > $balance) {
-                return redirect()->route('stripe')->with('error', 'You don\'t have enough money to buy this products');
+                return redirect()->route('stripe')->with('error', 'You don\'t have enough money to buy the selcted products');
             } else {
             $newBalance = Auth::user()->getBalance() - $total;
             Auth::user()->setBalance($newBalance);

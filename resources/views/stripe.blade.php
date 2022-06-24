@@ -9,6 +9,7 @@
 
 <body>
     <div class="container d-flex justify-content-center">
+
         <div class="panel-body">
             @if (Session::has('success'))
                 <div class="alert alert-success text-center">
@@ -26,13 +27,14 @@
                     @endif
                     <div class='col-xs-12 form-group required'>
                         <label class='control-label'>Name on Card</label> <input class='form-control' size='4'
-                            type='text' placeholder="Popescu Ioan">
+                            type='text' placeholder="ex. Popescu Ioan">
                     </div>
                 </div>
                 <div class='form-row row'>
                     <div class='col-xs-12 form-group required'>
                         <label class='control-label'>Card Number</label> <input autocomplete='off'
-                            class='form-control card-number' size='20' type='password' placeholder="4242424242424242">
+                            class='form-control card-number' size='20' type='password'
+                            placeholder="ex. 4242424242424242">
                     </div>
                 </div>
                 <div class='form-row row'>
@@ -71,21 +73,13 @@
                             <option>2027</option>
                         </select>
                     </div>
-                    <div class='form-row row'>
-                        <div class='col-xs-12 col-md-4 form-group expiration required'>
-                            <label class='control-label'>Amount</label> <input id="amount">
-                        </input>
-
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now
+                                ($100)</button>
                         </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now
-                            ($100)</button>
                     </div>
-
-                </div>
             </form>
         </div>
     </div>
@@ -133,7 +127,6 @@
                         .find('.alert')
                         .text(response.error.message);
                 } else {
-                    /* token contains id, last4, and card type */
                     var token = response['id'];
                     $form.find('input[type=text]').empty();
                     $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
